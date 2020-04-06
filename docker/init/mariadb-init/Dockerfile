@@ -9,4 +9,4 @@ ADD ./sqlfile/*.sql /scripts/
 ADD ./init_db.sh /scripts/
 
 # 执行shell
-CMD ["sh", "/scripts/init_db.sh"]
+CMD ["bash", "/scripts/init_db.sh"]

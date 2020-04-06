@@ -4,10 +4,7 @@
 project_path_prefix="/home/tim/git/ishou"
 
 # 项目版本
-project_version="v1.0"
-
-# 项目分支
-project_branch="dev"
+version="v1.0"
 
 # 有sql语句的项目sql路径，空格分割
 project_sql_path=(auth/mariadb ishou-service-site/mariadb)
@@ -31,8 +28,11 @@ function build_image()
 
     echo "进入mariadb制作镜像目录："$mariadb_docker_path
     cd $mariadb_docker_path
+    
+    latest_commit_id=$(git rev-parse --short HEAD)
+    branch=$(git symbolic-ref --short -q HEAD)
     time=$(date "+%Y%m%d_%H%M%S")
-    tag=$project_version"_"$project_branch"_"$time
+    tag=$version"_"$branch"_"$time"_"$latest_commit_id
     docker_name="ishou_mariadb_init:"$tag
     sudo docker build -t $docker_name .
 }

@@ -45,3 +45,7 @@ docker run -d -p 8080:80 --name ishou_nginx_infra \
 6、前端镜像启动
 sudo docker run --name ishou_web -v /home/tim/data/ishou/data/nginx/web:/opt/project/web -d ishou_web:latest
 
+7、mariadb初始化镜像
+sudo docker run --name ishou_mariadb_init -p 3307:3307 -e MYSQL_ROOT_PASSWORD=123456 -d -v /home/tim/data/ishou/data/init/mariadb/backup:/home/mysql/backup ishou_mariadb_init:v1.0_dev_20200406_132925_530483d
+
+
