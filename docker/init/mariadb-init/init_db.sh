@@ -21,8 +21,7 @@ do
     echo "${exclude_base[@]}" | grep -wq "$var" &&  echo "dump exclude_base:"$var || include_base=$include_base" "$var;
 done
 
-if [ -n "$include_base" ]; then 
-    echo "STRING is not empty"
+if [ -n "$include_base" ]; then
     echo "need dump databases:"$include_base;
 
     # 导出ishou_auth库
