@@ -43,19 +43,22 @@ echo "5、eureka 服务启动，端口：9999"
 sudo docker run -d --net=host \
   --restart always \
   --name ishou_eureka_service \
-  eureka-server:20200329_183226_1c6152e
+  eureka-server:v1.0_dev_20200406_183306_19da952
 
 echo "6、auth 服务启动，端口：9091"
 sudo docker run -d --net=host \
   --restart always \
   --name ishou_auth_service \
-  auth:20200329_190450_4367395
+  -e MYSQL_ROOT_PASSWORD=123456 \
+  -e REDIS_PASSWORD=123456 \
+  auth:v1.0_dev_20200406_183523_739d37a
 
 echo "7、site 服务启动，端口：9092"
 sudo docker run -d --net=host \
   --restart always \
   --name ishou_site_service \
-  ishou-service-site:20200329_183549_7524176
+  -e MYSQL_ROOT_PASSWORD=123456 \
+  ishou-service-site:v1.0_dev_20200406_182831_7cd20da
 
 echo "8、前端镜像启动"
 sudo docker run -d --net=host \
