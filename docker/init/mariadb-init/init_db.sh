@@ -21,13 +21,18 @@ do
     echo "${exclude_base[@]}" | grep -wq "$var" &&  echo "dump exclude_base:"$var || include_base=$include_base" "$var;
 done
 
-echo "need dump databases:"$include_base;
+if [ -n "$include_base" ]; then 
+    echo "STRING is not empty"
+    echo "need dump databases:"$include_base;
 
-# 导出ishou_auth库
-time=$(date "+%Y%m%d_%H%M%S");
-mysqldump -uroot -p$MYSQL_ROOT_PASSWORD -h127.0.0.1 --databases $include_base > $backup_path/all_db_$time.sql;
+    # 导出ishou_auth库
+    time=$(date "+%Y%m%d_%H%M%S");
+    mysqldump -uroot -p$MYSQL_ROOT_PASSWORD -h127.0.0.1 --databases $include_base > $backup_path/all_db_$time.sql;
 
-echo "数据库备份完成！"
+    echo "数据库备份完成！"
+else
+    echo "没有需要备份的数据库！"
+fi
 
 #################### 2、执行sql
 # 指明sql脚本所在目录

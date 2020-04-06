@@ -1,5 +1,8 @@
 #!/bin/bash
 
+global_password=$(date +%s%N|md5sum|head -c 10)
+echo $global_password
+
 echo "0、portainer docker管理镜像启动，端口：9000"
 sudo docker run -d --net=host \
   --restart=always \
@@ -12,7 +15,7 @@ sudo docker run -d --net=host \
   --restart always \
   -v /home/tim/data/ishou/data/mariadb:/var/lib/mysql \
   --name ishou_mariadb_infra \
-  -e MYSQL_ROOT_PASSWORD=123456 \
+  -e MYSQL_ROOT_PASSWORD=$global_password \
   mariadb:20200329_204923
 
 echo "2、redis 基础服务镜像启动，端口：6379"
@@ -21,7 +24,7 @@ sudo docker run -d --net=host \
   -v /home/tim/data/ishou/data/redis:/data \
   --name ishou_redis_infra \
   redis:20200329_204223 \
-  redis-server --appendonly yes --requirepass "123456"
+  redis-server --appendonly yes --requirepass $global_password
 
 echo "3、nginx 基础服务镜像启动，端口：80"
 sudo docker run -d --net=host \
@@ -36,7 +39,7 @@ echo "4、mariadb 初始化镜像启动"
 sudo docker run -d --net=host \
   -v /home/tim/data/ishou/data/init/mariadb/backup:/home/mysql/backup \
   --name ishou_mariadb_init \
-  -e MYSQL_ROOT_PASSWORD=123456 \
+  -e MYSQL_ROOT_PASSWORD=$global_password \
   ishou_mariadb_init:v1.0_dev_20200406_134258_9fe38fb
 
 echo "5、eureka 服务启动，端口：9999"
@@ -49,15 +52,15 @@ echo "6、auth 服务启动，端口：9091"
 sudo docker run -d --net=host \
   --restart always \
   --name ishou_auth_service \
-  -e MYSQL_ROOT_PASSWORD=123456 \
-  -e REDIS_PASSWORD=123456 \
+  -e MYSQL_ROOT_PASSWORD=$global_password \
+  -e REDIS_PASSWORD=$global_password \
   auth:v1.0_dev_20200406_183523_739d37a
 
 echo "7、site 服务启动，端口：9092"
 sudo docker run -d --net=host \
   --restart always \
   --name ishou_site_service \
-  -e MYSQL_ROOT_PASSWORD=123456 \
+  -e MYSQL_ROOT_PASSWORD=$global_password \
   ishou-service-site:v1.0_dev_20200406_182831_7cd20da
 
 echo "8、前端镜像启动"
