@@ -40,7 +40,7 @@ sudo docker run -d --net=host \
   -v /home/tim/data/ishou/data/init/mariadb/backup:/home/mysql/backup \
   --name ishou_mariadb_init \
   -e MYSQL_ROOT_PASSWORD=$global_password \
-  ishou_mariadb_init:v1.0_dev_20200406_204044_4efb7d2
+  ishou_mariadb_init:v1.0_dev_20200406_204556_1ffbacf
 
 echo "5、eureka 服务启动，端口：9999"
 sudo docker run -d --net=host \
