@@ -55,7 +55,7 @@ sudo docker run -d --net=host \
   -v $data_path"/init/mariadb/backup":/home/mysql/backup \
   --name ishou_mariadb_init \
   -e MYSQL_ROOT_PASSWORD=$global_password \
-  ishou_mariadb_init:v1.0_dev_20200406_204556_1ffbacf
+  ishou_mariadb_init:v1.0_dev_20200411_154744_981cbab
 
 echo "5、eureka 服务启动，端口：9999"
 sudo docker run -d --net=host \
@@ -72,20 +72,20 @@ sudo docker run -d --net=host \
   --name ishou_auth_service \
   -e MYSQL_ROOT_PASSWORD=$global_password \
   -e REDIS_PASSWORD=$global_password \
-  auth:v1.0_dev_20200406_183523_739d37a
+  auth:v1.0_dev_20200411_154350_39c0f8f
 
 echo "7、site 服务启动，端口：9092"
 sudo docker run -d --net=host \
   --restart always \
   --name ishou_site_service \
   -e MYSQL_ROOT_PASSWORD=$global_password \
-  ishou-service-site:v1.0_dev_20200406_182831_7cd20da
+  ishou-service-site:v1.0_dev_20200411_173205_a4183bd
 
 echo "8、前端镜像启动"
 sudo docker run -d --net=host \
   --name ishou_web \
   -v $data_path"/nginx/web":/opt/project/web \
-  ishou-web:v1.0_dev_20200406_103732_c1f52a6
+  ishou-web:v1.0_dev_20200411_154858_b89b1c8
 
 echo "部署中……"
 sleep 1m

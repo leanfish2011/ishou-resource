@@ -118,6 +118,7 @@ insert into sys_menu (`id`,`creator_id`,`name`,`parent_id`,`sort_num`,`is_show`)
 
       -- 二级菜单-收藏管理
 insert into sys_menu (`id`,`creator_id`,`name`,`url`,`request_path`,`parent_id`,`sort_num`,`is_show`) values('3','0-admin','网页收藏','/site','/api/v1/site/personal','1',3,1);
+insert into sys_menu (`id`,`creator_id`,`name`,`url`,`request_path`,`parent_id`,`sort_num`,`is_show`) values('8','0-admin','主页收藏','/homesite','/api/v1/site/home','1',8,1);
 
     -- 二级菜单-权限管理
 insert into  sys_menu (`id`,`creator_id`,`name`,`url`,`request_path`,`parent_id`,`sort_num`,`is_show`) values('4','0-admin','用户管理','/user','/api/v1/auth/user','2',4,1);
@@ -136,6 +137,8 @@ insert into  sys_rolemenu (`id`,`creator_id`,`roleid`,`menuid`) values ('4','0-a
 insert into  sys_rolemenu (`id`,`creator_id`,`roleid`,`menuid`) values ('5','0-admin','0-role-admin','5');
 insert into  sys_rolemenu (`id`,`creator_id`,`roleid`,`menuid`) values ('6','0-admin','0-role-admin','6');
 insert into  sys_rolemenu (`id`,`creator_id`,`roleid`,`menuid`) values ('7','0-admin','0-role-admin','7');
+insert into  sys_rolemenu (`id`,`creator_id`,`roleid`,`menuid`) values ('8','0-admin','0-role-admin','8');
+
 
   -- 普通使用者
 insert into  sys_rolemenu (`id`,`creator_id`,`roleid`,`menuid`) values ('10','0-admin','1-role-user','0');
