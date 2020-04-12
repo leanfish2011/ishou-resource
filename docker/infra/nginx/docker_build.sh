@@ -9,7 +9,7 @@ version="v1.0"
 function build_image()
 {
     nginx_docker_path=$project_path_prefix"/ishou-resource/docker/infra/nginx"
-    echo "进入mariadb制作镜像目录："$nginx_docker_path
+    echo "进入nginx制作镜像目录："$nginx_docker_path
     cd $nginx_docker_path
     
     latest_commit_id=$(git rev-parse --short HEAD)
