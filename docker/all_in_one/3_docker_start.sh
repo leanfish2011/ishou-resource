@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 服务器执行
+# 部署镜像
+
 # 所有镜像
 image_portainer="portainer:20200329_212642"
 image_ishou_mariadb_infra="mariadb:20200329_204923"
