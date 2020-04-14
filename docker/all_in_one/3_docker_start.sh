@@ -7,7 +7,7 @@
 image_portainer="portainer:20200329_212642"
 image_ishou_mariadb_infra="mariadb:20200329_204923"
 image_ishou_redis_infra="redis:20200329_204223"
-image_ishou_nginx_infra="ishou_nginx_infra:v1.0_dev_20200412_170628_1e1bfdd"
+image_ishou_nginx_infra="ishou_nginx_infra:v1.0_dev_20200414_213720_60222dd"
 image_ishou_mariadb_init="ishou_mariadb_init:v1.0_dev_20200411_154744_981cbab"
 image_ishou_eureka_service="eureka-server:v1.0_dev_20200406_183306_19da952"
 image_ishou_auth_service="auth:v1.0_dev_20200412_172850_ac7eb73"
