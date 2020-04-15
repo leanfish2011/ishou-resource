@@ -44,6 +44,7 @@ sudo docker run -d --net=host \
   -v $data_path"/mariadb":/var/lib/mysql \
   --name ishou_mariadb_infra \
   -e MYSQL_ROOT_PASSWORD=$global_password \
+  -e TZ=Asia/Shanghai \
   $image_ishou_mariadb_infra
 
 echo "2、redis 基础服务镜像启动，端口：6379"

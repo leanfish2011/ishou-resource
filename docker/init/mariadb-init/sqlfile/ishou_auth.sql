@@ -4,9 +4,6 @@ drop database if exists ishou_auth; -- 直接删除数据库，不提醒
 create database ishou_auth; -- 创建数据库
 use ishou_auth; -- 选择数据库
 
---
--- table structure for table `sys_menu`
---
 drop table if exists `sys_menu`;
 create table `sys_menu` (
   `id` varchar(60) not null comment '主键',
@@ -24,9 +21,6 @@ create table `sys_menu` (
 ) engine=innodb default charset=utf8 comment='系统菜单';
 
 
---
--- table structure for table `sys_role`
---
 drop table if exists `sys_role`;
 create table `sys_role` (
   `id` varchar(60) not null comment '主键',
@@ -40,9 +34,6 @@ create table `sys_role` (
 ) engine=innodb default charset=utf8 comment='角色';
 
 
---
--- table structure for table `sys_rolemenu`
---
 drop table if exists `sys_rolemenu`;
 create table `sys_rolemenu` (
   `id` varchar(60) not null comment '主键',
@@ -56,9 +47,6 @@ create table `sys_rolemenu` (
 ) engine=innodb default charset=utf8 comment='角色菜单';
 
 
---
--- table structure for table `sys_roleuser`
---
 drop table if exists `sys_roleuser`;
 create table `sys_roleuser` (
   `id` varchar(60) not null comment '主键',
@@ -72,9 +60,6 @@ create table `sys_roleuser` (
 ) engine=innodb default charset=utf8 comment='角色用户';
 
 
---
--- table structure for table `sys_user`
---
 drop table if exists `sys_user`;
 create table `sys_user` (
   `id` varchar(60) not null comment '主键',
@@ -90,8 +75,6 @@ create table `sys_user` (
   `photo_fingerprint` varchar(45) default null comment '用户头像指纹码',
   primary key (`id`)
 ) engine=innodb default charset=utf8 comment='系统用户表';
-
-
 
 
 -- 4、初始化数据
