@@ -4,7 +4,7 @@
 # 加载tar包
 
 echo "加载tar包"
-image_name="ishou_all_20200412_191754.tar"
+image_name="ishou_all_20200416_220907.tar"
 
 # TODO 将镜像上传到服务器上
 
