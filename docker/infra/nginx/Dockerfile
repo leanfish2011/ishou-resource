@@ -1,5 +1,7 @@
 FROM nginx:20200329_204023
 
+ENV TZ=Asia/Shanghai
+
 # 将当前目录下的nginx.conf拷贝进去，替换nginx中的配置文件
 ADD ./nginx.conf /etc/nginx/
 

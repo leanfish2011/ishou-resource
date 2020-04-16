@@ -7,12 +7,12 @@
 image_portainer="portainer:20200329_212642"
 image_ishou_mariadb_infra="mariadb:20200329_204923"
 image_ishou_redis_infra="redis:20200329_204223"
-image_ishou_nginx_infra="ishou_nginx_infra:v1.0_dev_20200414_223526_eb9dab9"
+image_ishou_nginx_infra="ishou_nginx_infra:v1.0_dev_20200416_213339_c02895e"
 image_ishou_mariadb_init="ishou_mariadb_init:v1.0_dev_20200415_223128_eea82b1"
-image_ishou_eureka_service="eureka-server:v1.0_dev_20200406_183306_19da952"
-image_ishou_auth_service="auth:v1.0_dev_20200412_172850_ac7eb73"
-image_ishou_site_service="ishou-service-site:v1.0_dev_20200411_173205_a4183bd"
-image_ishou_web="ishou-web:v1.0_dev_20200412_174519_5838952"
+image_ishou_eureka_service="eureka-server:v1.0_dev_20200416_212951_19da952"
+image_ishou_auth_service="auth:v1.0_dev_20200416_212658_7f0bf70"
+image_ishou_site_service="ishou-service-site:v1.0_dev_20200416_213129_8dc91fa"
+image_ishou_web="ishou-web:v1.0_dev_20200416_213517_5838952"
 
 
 read -p "确定重新部署服务 (y/n)?" CONT
@@ -36,6 +36,7 @@ sudo docker run -d --net=host \
   --restart=always \
   -v /var/run/docker.sock:/var/run/docker.sock \
   --name portainer \
+  -e TZ=Asia/Shanghai \
   $image_portainer
 
 echo "1、mariadb 基础服务镜像启动，端口：3306"
@@ -52,6 +53,7 @@ sudo docker run -d --net=host \
   --restart=always \
   -v $data_path"/redis":/data \
   --name ishou_redis_infra \
+  -e TZ=Asia/Shanghai \
   $image_ishou_redis_infra \
   redis-server --appendonly yes --requirepass $global_password
 
