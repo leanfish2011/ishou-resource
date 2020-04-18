@@ -14,23 +14,58 @@ image_ishou_auth_service="auth:v1.0_dev_20200416_212658_7f0bf70"
 image_ishou_site_service="ishou-service-site:v1.0_dev_20200416_213129_8dc91fa"
 image_ishou_web="ishou-web:v1.0_dev_20200416_213517_5838952"
 
+# ishou项目全部容器
+containers=(
+    "portainer" 
+    "ishou_mariadb_infra" 
+    "ishou_redis_infra" 
+    "ishou_nginx_infra" 
+    "ishou_mariadb_init"  
+    "ishou_eureka_service" 
+    "ishou_auth_service" 
+    "ishou_site_service" 
+    "ishou_web"
+    );
 
-read -p "确定重新部署服务 (y/n)?" CONT
+read -p "确定重新部署服务，之前的挂载、备份、容器都会清除，确定 (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
   echo "重新部署服务，请确认旧的服务已经关闭！";
 else
   exit 1;
 fi
 
+# 生成全局密码
 global_password=$(date +%s%N|md5sum|head -c 10)
 echo $global_password
 
+# 清理挂载目录
 data_path="/home/data/ishou/data"
 echo "数据挂载目录："$data_path
-echo "清除挂载目录数据……"
+echo "开始清除挂载目录数据……"
 dataFile=$data_path"/*"
 sudo rm -rf $dataFile
+echo "挂载目录清理完成！"
 
+# 清理容器
+echo "开始删除旧的容器……"
+for container in ${containers[@]}
+do
+    result=$(sudo docker ps -a | grep $container)
+    if [[ -n $result ]]
+    then
+        echo "停止容器："
+        sudo docker stop $container
+
+        echo "删除容器："
+        sudo docker rm $container
+    else
+        echo "容器："$container"不存在！"
+    fi    
+done
+echo "旧的容器删除完成！"
+
+# 部署
+echo "开始部署……"
 echo "0、portainer docker管理镜像启动，端口：9000"
 sudo docker run -d --net=host \
   --restart=always \
@@ -108,4 +143,4 @@ sudo docker run -d --net=host \
 echo "部署中……"
 sleep 1m
 
-echo "镜像启动完成！"
+echo "镜像部署完成，请在浏览器中访问！"
