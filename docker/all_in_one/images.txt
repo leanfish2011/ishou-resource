@@ -1,1 +1,0 @@
-image_portainer="portainer:20200329_212642" 

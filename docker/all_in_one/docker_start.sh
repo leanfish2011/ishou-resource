@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# 服务器执行
-# 部署镜像
+# 服务器执行，进行镜像全量部署
 
-# 所有镜像
+# ishou整个项目镜像tar包
+image_name="ishou_all_20200416_220907.tar"
+
+# ishou各个服务对应镜像
 image_portainer="portainer:20200329_212642"
 image_ishou_mariadb_infra="mariadb:20200329_204923"
 image_ishou_redis_infra="redis:20200329_204223"
@@ -25,11 +27,12 @@ containers=(
     "ishou_auth_service" 
     "ishou_site_service" 
     "ishou_web"
-    );
+  );
 
-read -p "确定重新部署服务，之前的挂载、备份、容器都会清除，确定 (y/n)?" CONT
+# 确定
+read -p "重新部署服务，之前的挂载、备份、容器都会清除，确定 (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
-  echo "重新部署服务，请确认旧的服务已经关闭！";
+  echo "重新部署服务！";
 else
   exit 1;
 fi
@@ -63,6 +66,9 @@ do
     fi    
 done
 echo "旧的容器删除完成！"
+
+echo "加载tar包"
+sudo docker load -i $image_name
 
 # 部署
 echo "开始部署……"
