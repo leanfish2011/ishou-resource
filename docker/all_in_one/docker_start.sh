@@ -14,7 +14,7 @@ image_ishou_mariadb_init="ishou_mariadb_init:v1.0_dev_20200415_223128_eea82b1"
 image_ishou_eureka_service="eureka-server:v1.0_dev_20200416_212951_19da952"
 image_ishou_auth_service="auth:v1.0_dev_20200416_212658_7f0bf70"
 image_ishou_site_service="ishou-service-site:v1.0_dev_20200416_213129_8dc91fa"
-image_ishou_web="ishou-web:v1.0_dev_20200425_113742_0c990bb"
+image_ishou_web="ishou-web:v1.0_dev_20200426_222334_ec0352e"
 
 # ishou项目全部容器
 containers=(
