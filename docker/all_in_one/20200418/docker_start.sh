@@ -14,7 +14,7 @@ image_ishou_mariadb_init="ishou_mariadb_init:v1.0_dev_20200415_223128_eea82b1"
 image_ishou_eureka_service="eureka-server:v1.0_dev_20200416_212951_19da952"
 image_ishou_auth_service="auth:v1.0_dev_20200416_212658_7f0bf70"
 image_ishou_site_service="ishou-service-site:v1.0_dev_20200416_213129_8dc91fa"
-image_ishou_web="ishou-web:v1.0_dev_20200426_222334_ec0352e"
+image_ishou_web="ishou-web:v1.0_dev_20200416_213517_5838952"
 
 # ishou项目全部容器
 containers=(
@@ -149,4 +149,4 @@ sudo docker run -d --net=host \
 echo "部署中……"
 sleep 1m
 
-echo "镜像部署完成，请在浏览器中访问！"
+echo "镜像部署完成，请在浏览器中输入ip访问！"
