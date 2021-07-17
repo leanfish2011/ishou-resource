@@ -1,4 +1,0 @@
-2020-06-20升级内容：
-1、增加seaweedfs服务，包含master、volume两个服务
-2、site数据库增加字段，需要执行sql
-3、web服务、site服务升级
