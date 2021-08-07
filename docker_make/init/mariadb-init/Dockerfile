@@ -1,3 +1,4 @@
+
 # 使用mariadb镜像，虽然只是初始化镜像，因为要使用mysql的命令，需要mariadb
 FROM mariadb:20200329_204923
 

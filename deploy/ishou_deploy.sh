@@ -11,12 +11,12 @@ image_ishou_mariadb_infra="mariadb:20200329_204923"
 image_ishou_redis_infra="redis:20200329_204223"
 image_ishou_nginx_infra="ishou_nginx_infra:v1.0_dev_20210110_220402_0d92bf8"
 image_ishou_seaweedfs_infra="seaweedfs:20200620_182621"
-image_ishou_mariadb_init="ishou_mariadb_init:v1.0_dev_20200415_223128_eea82b1"
+image_ishou_mariadb_init="ishou_mariadb_init:v1.0_dev_20210717_171727_d760b70"
 image_ishou_eureka_service="eureka-server:v1.0_dev_20200416_212951_19da952"
 image_ishou_auth_service="auth:v1.0_dev_20210110_210739_0342d9f"
 image_ishou_site_service="ishou-service-site:v1.0_dev_20210116_212649_240043e"
 image_ishou_system_service="ishou-service-system:v1.0_dev_20210116_180822_68f5277"
-image_ishou_web="ishou-web:v1.0_dev_20210116_202701_778f0ce"
+image_ishou_web="ishou-web:v1.0_dev_20210717_161736_e683c0c"
 
 
 # ishou项目全部容器
