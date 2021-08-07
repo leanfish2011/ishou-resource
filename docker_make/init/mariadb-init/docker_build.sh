@@ -7,16 +7,23 @@ project_path_prefix="/home/tim/git/ishou"
 version="v1.0"
 
 # 有sql语句的项目sql路径，空格分割
-project_sql_path=(auth/mariadb ishou-service-site/mariadb)
+project_sql_path=(auth/mariadb ishou-service-site/mariadb ishou-service-system/mariadb)
 
 function build_image()
 {
-    mariadb_docker_path=$project_path_prefix"/ishou-resource/docker/init/mariadb-init"
+    mariadb_docker_path=$project_path_prefix"/ishou-resource/docker_make/init/mariadb-init"
+    #如果文件夹不存在，创建文件夹
+    if [ ! -d $mariadb_docker_path ]; then
+        echo $mariadb_docker_path"不存在"
+        exit
+    fi
+
     sqlfile_path=$mariadb_docker_path"/sqlfile/"
     echo "进入mariadb制作镜像sql目录："$sqlfile_path
     cd $sqlfile_path
+    ls
     echo "删除旧的sql"
-    rm *
+    rm *.sql
     
     for i in ${!project_sql_path[@]}
     do
