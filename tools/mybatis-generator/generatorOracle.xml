@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="F:\mybatis-generator-core-1.3.2\lib\ojdbc6.jar" />
+	<context id="sysGenerator" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl" 
+			userId="lzhd" password="list">
+		</jdbcConnection>
+
+		<javaTypeResolver >
+		  <property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.lzhd.core.entity"
+			targetProject="F:\mybatis-generator-core-1.3.2\lib">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.lzhd.core.entity.mapper"
+			targetProject="F:\mybatis-generator-core-1.3.2\lib">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.lzhd.core.dao" targetProject="F:\mybatis-generator-core-1.3.2\lib">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table tableName="MODULE" domainObjectName="Module" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+			<generatedKey column="id" sqlStatement="SELECT SYS_GUID() FROM DUAL" type="pre" />
+
+		</table>
+	</context>
+</generatorConfiguration>
