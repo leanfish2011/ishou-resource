@@ -31,3 +31,4 @@ sudo docker tag arey/mysql-client:latest mysql-client:20210809_194301
 # 前端基础就像，alpine:3.14
 sudo docker pull alpine:3.14
 sudo docker tag alpine:3.14 alpine:20200330_212034
+sudo docker tag alpine:3.14 docker_registry/alpine:20200330_212034
