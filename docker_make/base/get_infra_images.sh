@@ -22,3 +22,12 @@ sudo docker tag mongo:latest mongo:20200329_205123
 # 构建openjdk基础镜像
 sudo docker pull openjdk:8-jdk-alpine
 sudo docker tag openjdk:8-jdk-alpine openjdk:20200329_205523
+
+# 构建mariadb初始化基础镜像
+# 镜像来源：https://registry.hub.docker.com/r/arey/mysql-client
+sudo docker pull arey/mysql-client:latest
+sudo docker tag arey/mysql-client:latest mysql-client:20210809_194301
+
+# 前端基础就像，alpine:3.14
+sudo docker pull alpine:3.14
+sudo docker tag alpine:3.14 alpine:20200330_212034
