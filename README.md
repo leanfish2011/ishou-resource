@@ -3,8 +3,15 @@
 
 TODO
 ## 展示
+#### 主页
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/home.jpg" width="80%">
+
+#### 后台管理
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/manage.jpg" width="80%">
 
 ## 设计
+#### 架构设计
+<img decoding="async" src="https://img2022.cnblogs.com/blog/319088/202209/319088-20220924150239657-532536027.png" width="80%">
 
 ## 代码
 |  服务   | 代码  | 备注  |
