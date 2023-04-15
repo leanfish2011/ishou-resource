@@ -28,8 +28,8 @@
 ## 部署
 > 一键部署
 #### 部署说明：
-1. 服务器安装好ubuntu操作系统
-2. 服务器安装好docker。命令：sudo apt-get update && sudo apt install docker.io
+1. 选择装有Linux操作系统的服务器（例如Ubuntu系统）
+2. 服务器安装好docker。Ubuntu安装docker命令：sudo apt-get update && sudo apt install docker.io
 3. 拷贝ishou_deploy.sh、镜像tar包到服务器（镜像tar包较大，另外存储，联系我获取，leanfish2011@163.com）
 4. 服务器上执行./ishou_deploy.sh
 5. 浏览器输入 http://ip 访问系统
