@@ -4,17 +4,17 @@
 - docker一键部署
 ## 展示
 #### 主页
-<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/home.jpg" width="80%">
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/home.jpg" width="100%">
 
 #### 后台管理
-<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/manage.jpg" width="80%">
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/manage.jpg" width="100%">
 
 ## 设计
 #### 架构设计
-<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/framework.png" width="80%">
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/framework.png" width="100%">
 
 #### 数据流向
-<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/flow.jpg" width="80%">
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/flow.jpg" width="100%">
 
 ## 代码
 
