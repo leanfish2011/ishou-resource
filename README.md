@@ -11,7 +11,10 @@
 
 ## 设计
 #### 架构设计
-<img decoding="async" src="https://img2022.cnblogs.com/blog/319088/202209/319088-20220924150239657-532536027.png" width="80%">
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/framework.png" width="80%">
+
+#### 数据流向
+<img decoding="async" src="https://raw.githubusercontent.com/leanfish2011/ishou-resource/gh-pages/img/flow.jpg" width="80%">
 
 ## 代码
 |  服务   | 代码  | 备注  |
